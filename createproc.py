@@ -72,13 +72,3 @@ if execute > 0:
 else:
     print("Create Process failed with error code: {0}".format(k_handle.GetLastError()))
 
-#console is created with 2 processes maybe two pid's makes this not work
-#if lpProcessInformation.hProcess:
-#    lpdwProcessId = ctypes.c_ulong()
-#    u_handle.GetWindowThreadProcessId(lpProcessInformation.hProcess, ctypes.byref(lpdwProcessId))
-#    pid = lpdwProcessId.value
-#
-#    if pid != 0:
-#        print("Process Id: {0}".format(pid))
-#    else:
-#        print("Failed to retrieve process id.")
