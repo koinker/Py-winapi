@@ -38,21 +38,22 @@ class PROCESS_INFORMATION(ctypes.Structure):
         ("dwThreadId", DWORD),
     ]
 
+#set flag values
 lpApplicationName = "C:\\Windows\\System32\\cmd.exe"
 lpCommandLine = None
 lpProcessAttributes = None
 lpThreadAttributes = None
 lpEnvironment = None
 lpCurrentDirectory = None
-
+#create seperate console
 dwCreationFlags = 0x00000010
 bInheritHandle = False
 lpProcessInformation = PROCESS_INFORMATION()
 lpStartupInfo = STARTUPINFO()
-
+#show window
 lpStartupInfo.wShowWindow = 0x1
 lpStartupInfo.dwFlags = 0x1
-
+#create process params
 execute = k_handle.CreateProcessW(
     lpApplicationName,
     lpCommandLine,
