@@ -10,11 +10,11 @@ dwDesiredAccess = PROCESS_ALL_ACCESS
 bInheritHandle = False
 dwProccessId = int(pid)
 
-response = k_handle.OpenProcess(dwDesiredAccess, bInheritHandle, dwProccessId)
+execute = k_handle.OpenProcess(dwDesiredAccess, bInheritHandle, dwProccessId)
 
-print(response)
+print(execute)
 
-if response <= 0:
+if execute <= 0:
     print("Handle was not created!")
 
 else:
