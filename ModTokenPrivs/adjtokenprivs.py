@@ -1,3 +1,5 @@
+#todo:
+#use args to tell whether to modify privs or not
 import ctypes 
 
 from modules.structs import LUID, LUID_AND_ATTRIBUTES, PRIVILEGE_SET, TOKEN_PRIVILEGES
